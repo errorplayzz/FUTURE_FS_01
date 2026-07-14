@@ -1,0 +1,150 @@
+.about {
+  position: relative;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  white-space: nowrap;
+  margin-bottom: 2.5rem;
+}
+
+.section-title span {
+  font-family: monospace;
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  margin-right: 1rem;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 300px;
+  background-color: var(--border-color);
+  margin-left: 1.5rem;
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 3fr 2fr;
+  gap: 3rem;
+}
+
+.about-text {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+}
+
+.about-text strong {
+  color: var(--accent-color);
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(140px, 200px));
+  gap: 0.5rem 1rem;
+  margin-top: 1.5rem;
+}
+
+.skill-item {
+  position: relative;
+  padding-left: 1.5rem;
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.skill-item::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.about-image-wrapper {
+  position: relative;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.about-image {
+  position: relative;
+  border-radius: 0.5rem;
+  background-color: var(--accent-color);
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 2;
+}
+
+.about-image::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(15, 23, 42, 0.5);
+  border-radius: 0.5rem;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+  z-index: 3;
+}
+
+.about-image:hover::before {
+  background-color: transparent;
+}
+
+.about-image::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--accent-color);
+  top: 20px;
+  left: 20px;
+  z-index: -1;
+  border-radius: 0.5rem;
+  transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.about-image:hover::after {
+  top: 15px;
+  left: 15px;
+}
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 1/1;
+  background-color: var(--bg-secondary);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.placeholder-text {
+  color: var(--text-secondary);
+  font-family: monospace;
+}
+
+@media (max-width: 768px) {
+  .about-content {
+    display: block;
+  }
+  
+  .about-image-wrapper {
+    margin: 3rem auto 0;
+  }
+  
+  .section-title::after {
+    width: 100%;
+  }
+}
