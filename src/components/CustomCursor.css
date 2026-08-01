@@ -1,0 +1,42 @@
+.custom-cursor-dot,
+.custom-cursor-outline {
+  position: fixed;
+  top: 0;
+  left: 0;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.custom-cursor-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-color);
+}
+
+.custom-cursor-outline {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--accent-color);
+  transition: width 0.2s ease-in-out, height 0.2s ease-in-out, background-color 0.2s ease-in-out;
+  transition-duration: 0.1s;
+  transition-property: width, height, border, background-color;
+  transition-timing-function: ease-out;
+}
+
+.custom-cursor-outline.hovering {
+  width: 60px;
+  height: 60px;
+  background-color: rgba(255, 177, 98, 0.1); /* Burning Flame transparent */
+  border-color: transparent;
+}
+
+/* Hide default cursor globally */
+body {
+  cursor: none;
+}
+
+a, button {
+  cursor: none;
+}
