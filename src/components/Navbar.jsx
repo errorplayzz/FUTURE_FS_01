@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Github, Linkedin, Mail } from 'lucide-react';
+import { Menu, X, Mail } from 'lucide-react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -28,6 +29,7 @@ const Navbar = () => {
 
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
+      <div className="noise-overlay"></div>
       <div className="navbar-container container">
         <a href="#home" className="logo">
           Portfolio<span>.</span>
@@ -44,8 +46,8 @@ const Navbar = () => {
           </ul>
           
           <div className="social-links">
-            <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20} /></a>
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
+            <a href="https://github.com/errorplayzz" target="_blank" rel="noreferrer" aria-label="GitHub"><FaGithub size={20} /></a>
+            <a href="https://www.linkedin.com/in/shashank-mahariya/" target="_blank" rel="noreferrer" aria-label="LinkedIn"><FaLinkedin size={20} /></a>
           </div>
         </div>
 
@@ -75,9 +77,9 @@ const Navbar = () => {
           ))}
         </ul>
         <div className="mobile-social-links">
-          <a href="https://github.com" target="_blank" rel="noreferrer"><Github size={24} /></a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer"><Linkedin size={24} /></a>
-          <a href="mailto:contact@example.com"><Mail size={24} /></a>
+          <a href="https://github.com/errorplayzz" target="_blank" rel="noreferrer"><FaGithub size={24} /></a>
+          <a href="https://www.linkedin.com/in/shashank-mahariya/" target="_blank" rel="noreferrer"><FaLinkedin size={24} /></a>
+          <a href="mailto:shashankmahariya.tech@gmail.com"><Mail size={24} /></a>
         </div>
       </div>
     </nav>
