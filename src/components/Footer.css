@@ -1,48 +1,116 @@
 .footer {
-  padding: 2rem 0;
+  position: relative;
+  padding: 6rem 0 3rem;
+  margin-top: 5rem;
+  background-color: rgba(15, 23, 42, 0.4);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-color), transparent);
+  opacity: 0.3;
+}
+
+.footer-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+.footer-top {
   text-align: center;
 }
 
-.footer-socials {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 1.5rem;
+.footer-cta {
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-family: 'Space Grotesk', sans-serif;
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  margin-bottom: 1rem;
 }
 
-.footer-socials a {
+.footer-sub-cta {
+  font-size: 1.2rem;
   color: var(--text-secondary);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-logo {
+  font-size: 2.5rem;
+  font-family: 'Space Grotesk', sans-serif;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.2);
+  color: transparent;
+  letter-spacing: 2px;
   transition: all 0.3s ease;
-  padding: 10px;
 }
 
-.footer-socials a:hover {
-  color: var(--accent-color);
-  transform: translateY(-3px);
+.footer-logo:hover {
+  -webkit-text-stroke: 1px var(--accent-color);
+  color: rgba(255, 177, 98, 0.1);
+  text-shadow: 0 0 20px rgba(255, 177, 98, 0.4);
 }
 
-.footer-credits {
+.footer-copyright {
   color: var(--text-secondary);
   font-size: 0.9rem;
-  font-family: monospace;
 }
 
-.footer-credits a {
-  transition: color 0.3s ease;
+.footer-social-pills {
+  display: flex;
+  gap: 1rem;
 }
 
-.footer-credits a:hover {
+.social-pill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.social-pill:hover {
   color: var(--accent-color);
+  background: linear-gradient(135deg, rgba(255, 177, 98, 0.1) 0%, rgba(255, 177, 98, 0.02) 100%);
+  border-color: rgba(255, 177, 98, 0.4);
+  transform: translateY(-5px);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.2),
+    0 10px 20px -5px rgba(255, 177, 98, 0.3);
 }
 
-.task-credit {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  opacity: 0.7;
-}
-
-@media (min-width: 769px) {
-  .footer-socials {
-    display: none; /* Hidden on desktop, we have it in the navbar or floating */
+@media (max-width: 768px) {
+  .footer-bottom {
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    text-align: center;
   }
 }
