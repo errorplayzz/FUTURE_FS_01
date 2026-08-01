@@ -1,22 +1,34 @@
-import { Github, Linkedin, Mail, Twitter } from 'lucide-react';
+import { Mail } from 'lucide-react';
+import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
-      <div className="container">
-        <div className="footer-socials">
-          <a href="https://github.com" target="_blank" rel="noreferrer" aria-label="GitHub"><Github size={20} /></a>
-          <a href="https://linkedin.com" target="_blank" rel="noreferrer" aria-label="LinkedIn"><Linkedin size={20} /></a>
-          <a href="https://twitter.com" target="_blank" rel="noreferrer" aria-label="Twitter"><Twitter size={20} /></a>
-          <a href="mailto:contact@example.com" aria-label="Email"><Mail size={20} /></a>
+    <footer className="footer section">
+      <div className="noise-overlay"></div>
+      <div className="container footer-container">
+        <div className="footer-top">
+          <h2 className="footer-cta">Let's build something <span className="text-gradient">epic.</span></h2>
+          <p className="footer-sub-cta">Currently open for new opportunities.</p>
         </div>
-        
-        <div className="footer-credits">
-          <a href="https://github.com/FUTURE_FS_01" target="_blank" rel="noreferrer">
-            <p>Built by John Doe</p>
-            <p className="task-credit">Future Interns • Task 01 • Full Stack Web Development</p>
-          </a>
+
+        <div className="footer-bottom">
+          <div className="footer-brand">
+            <h1 className="footer-logo">SHASHANK.</h1>
+            <p className="footer-copyright">© {new Date().getFullYear()} All rights reserved.</p>
+          </div>
+          
+          <div className="footer-social-pills">
+            <a href="https://github.com/errorplayzz" target="_blank" rel="noreferrer" className="social-pill" aria-label="GitHub">
+              <FaGithub size={24} />
+            </a>
+            <a href="https://www.linkedin.com/in/shashank-mahariya/" target="_blank" rel="noreferrer" className="social-pill" aria-label="LinkedIn">
+              <FaLinkedin size={24} />
+            </a>
+            <a href="mailto:shashankmahariya.tech@gmail.com" className="social-pill" aria-label="Email">
+              <Mail size={24} />
+            </a>
+          </div>
         </div>
       </div>
     </footer>
