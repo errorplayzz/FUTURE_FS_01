@@ -1,47 +1,76 @@
+import { useScrollReveal } from '../hooks/useScrollReveal';
 import './About.css';
 
 const About = () => {
+  const revealRef = useScrollReveal();
   const skills = [
-    'JavaScript (ES6+)', 'React', 'Node.js', 
-    'Express', 'MongoDB', 'HTML & CSS', 
-    'Tailwind CSS', 'Git & GitHub'
+    'JavaScript / TypeScript', 'React & Next.js', 'Node.js', 
+    'SQL & MongoDB', 'HTML / CSS', 'Python', 
+    'Git & GitHub', 'AI Prompt Engineering'
   ];
 
   return (
-    <section id="about" className="about section">
+    <section id="about" className="about section reveal" ref={revealRef}>
       <div className="container">
         <h2 className="section-title">
           <span>01.</span> About Me
         </h2>
         
-        <div className="about-content">
-          <div className="about-text">
-            <p>
-              Hello! My name is John and I enjoy creating things that live on the internet. 
-              My interest in web development started back in 2020 when I decided to try editing 
-              custom Tumblr themes — turns out hacking together HTML & CSS taught me a lot about 
-              the web!
+        <div className="bento-grid">
+          {/* Box 1: Text Intro */}
+          <div className="bento-item text-box">
+            <div className="noise-overlay"></div>
+            <p className="bento-text-large">
+              Hello! I'm Shashank, a developer currently pursuing BCA at St. Andrews Institute. 
             </p>
-            <p>
-              Fast-forward to today, and I've had the privilege of building projects as part of the 
-              <strong> Future Interns</strong> program. My main focus these days is building accessible, 
-              inclusive products and digital experiences for a variety of clients.
+            <p className="bento-text-small">
+              I'm passionate about building robust backend systems, automating complex workflows, and mastering AI-assisted application development.
             </p>
-            <p>Here are a few technologies I've been working with recently:</p>
-            
-            <ul className="skills-list">
-              {skills.map((skill, index) => (
-                <li key={index} className="skill-item">{skill}</li>
-              ))}
-            </ul>
           </div>
-          
-          <div className="about-image-wrapper">
-            <div className="about-image">
-              {/* Placeholder for Profile Picture */}
-              <div className="image-placeholder">
-                <span className="placeholder-text">Your Image</span>
+
+          {/* Box 2: Terminal */}
+          <div className="bento-item terminal-box">
+            <div className="noise-overlay"></div>
+            <div className="terminal-header">
+              <div className="terminal-buttons">
+                <span className="close"></span>
+                <span className="minimize"></span>
+                <span className="maximize"></span>
               </div>
+              <div className="terminal-title">profile.json</div>
+            </div>
+            <div className="terminal-body">
+              <pre>
+                <code>
+<span className="keyword">const</span> <span className="variable">dev</span> = {'{'}
+  <span className="property">role</span>: <span className="string">"Full Stack"</span>,
+  <span className="property">focus</span>: [
+    <span className="string">"Backend"</span>,
+    <span className="string">"AI-Dev"</span>
+  ]
+{'}'};
+                </code>
+              </pre>
+            </div>
+          </div>
+
+          {/* Box 3: Location */}
+          <div className="bento-item location-box">
+            <div className="noise-overlay"></div>
+            <div className="location-dot"></div>
+            <h3>Based in</h3>
+            <p>Delhi-NCR, India</p>
+            <div className="globe-abstract"></div>
+          </div>
+
+          {/* Box 4: Skills */}
+          <div className="bento-item skills-box">
+            <div className="noise-overlay"></div>
+            <h3>Tech Arsenal</h3>
+            <div className="skills-tags">
+              {skills.map((skill, index) => (
+                <span key={index} className="skill-tag">{skill}</span>
+              ))}
             </div>
           </div>
         </div>
